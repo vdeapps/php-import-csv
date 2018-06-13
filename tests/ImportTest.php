@@ -1,6 +1,9 @@
 <?php
 
+namespace Tests\vdeApps\Import\ImportCsv;
+
 use PHPUnit\Framework\TestCase;
+use vdeApps\Import\ImportAbstract;
 use vdeApps\Import\ImportCsv;
 
 class ImportTest extends TestCase {
@@ -63,7 +66,7 @@ class ImportTest extends TestCase {
             // Ajout de n colonnes
             ->addFields(10)
             // Ajout d'un plugins
-            ->addPlugins([ImportCsv::class, 'pluginsNullValue'])
+            ->addPlugins([$imp, 'pluginsNullValue'])
             // Ajout d'un plugins
             //                ->addPlugins(function ($rowData) {
             //                    $rowData['calcIduser'] = 'from plugins:' . $rowData['pkChantier'];
